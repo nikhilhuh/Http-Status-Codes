@@ -67,4 +67,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Ensure all interactive elements have a pointer cursor */
+  a, button, select, [type='button'], [type='submit'], [type='reset'], [type='checkbox'], [role='button'] {
+    cursor: pointer;
+  }
 }

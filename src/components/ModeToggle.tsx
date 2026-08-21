@@ -9,7 +9,7 @@ export function ModeToggle({ className }: { className?: string }) {
     <button
       onClick={toggleMode}
       className={cn(
-        "relative flex h-10 w-64 items-center rounded-lg bg-muted p-1 transition-colors",
+        "relative flex h-10 w-64 items-center rounded-lg bg-muted hover:bg-muted/80 p-1 transition-colors",
         className
       )}
       aria-label="Toggle Development and Production Mode"
