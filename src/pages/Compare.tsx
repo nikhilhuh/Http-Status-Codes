@@ -2,8 +2,15 @@ import { Link } from 'react-router-dom';
 import { ArrowLeftRight, Link as LinkIcon } from 'lucide-react';
 import { comparisons } from '../data/comparisons';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { useSEO } from '../hooks/useSEO';
 
 export function Compare() {
+  useSEO({
+    title: 'HTTP Status Codes Comparison — 200 vs 201, 401 vs 403, and more',
+    description: 'Compare confusing HTTP status codes. Understand the difference between 401 and 403, 400 and 422, 200 and 201, and 502 vs 504.',
+    canonical: '/compare',
+  });
+
   return (
     <div className="space-y-8 max-w-5xl mx-auto pb-12">
       <div className="border-b border-border pb-6">

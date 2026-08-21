@@ -4,8 +4,15 @@ import { quizQuestions } from '../data/quiz';
 import { Button } from '../components/ui/Button';
 import { Card, CardContent } from '../components/ui/Card';
 import { cn } from '../utils/cn';
+import { useSEO } from '../hooks/useSEO';
 
 export function Quiz() {
+  useSEO({
+    title: 'HTTP Status Code Quiz — Test Your Knowledge',
+    description: 'Test your knowledge of HTTP status codes, API responses, and errors with this interactive quiz.',
+    canonical: '/quiz',
+  });
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);

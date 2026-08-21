@@ -1,8 +1,15 @@
 import { Info, ShieldAlert, Zap, ServerCrash } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
 import { CodeBlock } from '../components/ui/CodeBlock';
+import { useSEO } from '../hooks/useSEO';
 
 export function About() {
+  useSEO({
+    title: 'About HTTP Status Codes & Best Practices',
+    description: 'Learn how to design robust, professional APIs by using HTTP semantics correctly. Never leak production errors.',
+    canonical: '/about',
+  });
+
   return (
     <div className="space-y-12 max-w-4xl mx-auto pb-12">
       <div className="border-b border-border pb-6">

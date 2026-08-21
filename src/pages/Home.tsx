@@ -4,6 +4,7 @@ import { Button } from '../components/ui/Button';
 import { Card, CardHeader, CardTitle, CardDescription } from '../components/ui/Card';
 import { scenarios } from '../data/scenarios';
 import { statusCodes } from '../data/statusCodes';
+import { useSEO } from '../hooks/useSEO';
 import type { StatusCategory } from '../types/status';
 
 const categories: { id: StatusCategory; name: string; desc: string; count: number }[] = [
@@ -15,6 +16,9 @@ const categories: { id: StatusCategory; name: string; desc: string; count: numbe
 ];
 
 export function Home() {
+  useSEO({
+    canonical: '/',
+  });
   const navigate = useNavigate();
 
   return (

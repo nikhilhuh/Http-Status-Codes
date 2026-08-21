@@ -7,12 +7,22 @@ import { ModeToggle } from '../components/ModeToggle';
 import { useMode } from '../context/ModeContext';
 import { getCategoryName, getCategoryColor } from '../utils/statusHelpers';
 import { cn } from '../utils/cn';
+import { useSEO } from '../hooks/useSEO';
 
 export function StatusCodeDetail() {
   const { code } = useParams();
   const { mode } = useMode();
   
   const status = statusCodes.find(c => c.code === Number(code));
+
+  useSEO(status ? {
+    title: `${status.code} ${status.name} — Meaning, API Usage & Example`,
+    description: `Learn what HTTP ${status.code} ${status.name} means, when to return it in an API, and see practical HTTP response examples.`,
+    canonical: `/status-codes/${status.code}`
+  } : {
+    title: 'Status Code Not Found',
+    noindex: true
+  });
 
   if (!status) {
     return (

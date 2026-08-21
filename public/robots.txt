@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+
+Sitemap: https://http-status-codes-phi.vercel.app/sitemap.xml

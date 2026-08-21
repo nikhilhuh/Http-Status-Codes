@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-
+import { useSEO } from '../hooks/useSEO';
 
 export function NotFound() {
+  useSEO({
+    title: 'Page Not Found',
+    noindex: true,
+  });
+
   return (
     <div className="flex flex-col items-center justify-center py-32 text-center space-y-4 max-w-lg mx-auto">
       <h1 className="text-6xl font-bold text-muted-foreground">404</h1>

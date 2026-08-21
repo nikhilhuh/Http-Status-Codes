@@ -5,10 +5,17 @@ import { ModeToggle } from '../components/ModeToggle';
 import { useMode } from '../context/ModeContext';
 import { statusCodes } from '../data/statusCodes';
 import { getCategoryColor } from '../utils/statusHelpers';
+import { useSEO } from '../hooks/useSEO';
 
 const HTTP_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'];
 
 export function Playground() {
+  useSEO({
+    title: 'HTTP Status Code Simulator & API Playground',
+    description: 'Experiment with HTTP status codes and see how your API should respond in development versus production.',
+    canonical: '/playground',
+  });
+
   const { mode } = useMode();
   const [method, setMethod] = useState('GET');
   const [endpoint, setEndpoint] = useState('/api/users/123');

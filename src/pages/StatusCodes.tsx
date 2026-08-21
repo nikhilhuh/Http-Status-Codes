@@ -3,11 +3,17 @@ import { useSearchParams } from 'react-router-dom';
 import { Filter, SortAsc } from 'lucide-react';
 import { statusCodes } from '../data/statusCodes';
 import { StatusCard } from '../components/StatusCard';
+import { useSEO } from '../hooks/useSEO';
 import type { StatusCategory } from '../types/status';
 
 type SortOption = 'code-asc' | 'code-desc' | 'category';
 
 export function StatusCodes() {
+  useSEO({
+    title: 'HTTP Status Codes List — 1xx, 2xx, 3xx, 4xx & 5xx',
+    description: 'Browse HTTP status codes from 100 to 599 with meanings, API use cases, examples, and guidance on when to use each response code.',
+    canonical: '/status-codes',
+  });
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryFilter = (searchParams.get('category') as StatusCategory | 'all') || 'all';
   const tagFilter = searchParams.get('tag') || 'all';
